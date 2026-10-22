@@ -86,6 +86,76 @@ public class LinkedList {
     public int size() {
         return -1;
     }
+
+    // move o elemento que está na posição index para a cabeça da lista.
+    // a busca pelo elemento é O(n), mas a movimentação em si deve ser O(1),
+    // ou seja, feita só manipulando referências.
+    public void moveToHead(int index) {
+    }
+
+    // dado que a lista já está em ordem crescente, insere v no lugar certo
+    // para que a lista continue ordenada depois da inserção. se já houver
+    // elementos iguais a v na lista, insira v depois deles.
+    public void insereOrdenado(int v) {
+    }
+
+    // troca n1 e n2 de posição na lista. não é permitido trocar os valores
+    // guardados nos nós, só manipular as referências (prev/next). esse
+    // algoritmo deve ser O(1), já que os nós a trocar são recebidos como
+    // parâmetro (ou seja, não é permitido percorrer a lista para achá-los).
+    public void swap(Node n1, Node n2) {
+    }
+
+    // inverte a lista: tail passa a ser head, o elemento anterior ao tail
+    // passa a ser o segundo da lista e assim por diante, até chegar em
+    // head, que passa a ser o último elemento (tail). não é permitido usar
+    // nenhuma estrutura auxiliar.
+    public void inverte() {
+    }
+
+    // retorna uma string representando a lista no sentido inverso, do tail
+    // para o head, usando os ponteiros prev (e não next). serve para provar
+    // que a implementação é de fato duplamente encadeada.
+    public String toStringReverso() {
+        return null;
+    }
+
+    // remove todas as ocorrências de valor na lista (diferente de
+    // removeByValue, que remove só a primeira ocorrência). retorna quantas
+    // remoções foram feitas.
+    public int removeAll(int valor) {
+        return -1;
+    }
+
+    // retorna um array com os elementos da lista, na mesma ordem em que
+    // aparecem (do head para o tail).
+    public int[] toArray() {
+        return null;
+    }
+
+    // retorna o valor do elemento do meio da lista, usando dois ponteiros
+    // (um avança uma posição por vez, o outro avança duas) em uma única
+    // passada pela lista. se a lista tiver tamanho par, retorne o segundo
+    // dos dois elementos centrais.
+    public int meio() {
+        return -1;
+    }
+
+    // retorna true se a lista for um palíndromo, isto é, se lê-la do head
+    // para o tail dá a mesma sequência de valores que lê-la do tail para o
+    // head. aproveite o fato de a lista ser duplamente encadeada para
+    // resolver isso em O(n) tempo e O(1) espaço extra, sem array ou pilha
+    // auxiliar.
+    public boolean isPalindromo() {
+        return false;
+    }
+
+    // retorna o nó na posição index. existe só para permitir que os testes
+    // de swap peguem referências reais de nós da lista (fora da classe não
+    // há outro jeito de obter um Node).
+    public Node getNode(int index) {
+        return null;
+    }
 }
 
 class Node {
