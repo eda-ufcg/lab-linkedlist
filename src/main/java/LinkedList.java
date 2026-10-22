@@ -156,6 +156,19 @@ public class LinkedList {
     public Node getNode(int index) {
         return null;
     }
+
+    // remove a última ocorrência do elemento cujo valor foi passado como
+    // parâmetro (diferente de removeByValue, que remove a primeira).
+    // se não encontrar, não faça nada. true se remover, false se não remover.
+    public boolean removeLastOccurrence(int valor) {
+        return false;
+    }
+
+    // remove da lista, em efeito colateral (sem criar uma lista nova), todo
+    // elemento cujo valor seja menor ou igual a valor. ao final, a lista só
+    // deve ter elementos estritamente maiores que valor.
+    public void filter(int valor) {
+    }
 }
 
 class Node {

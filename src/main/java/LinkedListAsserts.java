@@ -751,6 +751,87 @@ public class LinkedListAsserts {
         assert !ll.isPalindromo();
     }
 
+    public void testRemoveLastOccurrence() {
+        LinkedList ll = new LinkedList();
+
+        assert !ll.removeLastOccurrence(5);
+
+        ll.addLast(1);
+        ll.addLast(2);
+        ll.addLast(3);
+        ll.addLast(2);
+        ll.addLast(4);
+
+        assert ll.removeLastOccurrence(2);
+        assert ll.toString().equals("1, 2, 3, 4");
+
+        assert ll.removeLastOccurrence(2);
+        assert ll.toString().equals("1, 3, 4");
+
+        assert !ll.removeLastOccurrence(2);
+        assert ll.toString().equals("1, 3, 4");
+
+        ll = new LinkedList();
+        ll.addLast(1);
+        ll.addLast(2);
+        ll.addLast(1);
+
+        assert ll.removeLastOccurrence(1);
+        assert ll.toString().equals("1, 2");
+        assert ll.getLast() == 2;
+
+        ll = new LinkedList();
+        ll.addLast(7);
+        assert ll.removeLastOccurrence(7);
+        assert ll.isEmpty();
+    }
+
+    public void testFilter() {
+        LinkedList ll = new LinkedList();
+        ll.addLast(5);
+        ll.addLast(1);
+        ll.addLast(8);
+        ll.addLast(3);
+        ll.addLast(9);
+        ll.addLast(2);
+
+        ll.filter(4);
+        assert ll.toString().equals("5, 8, 9");
+        assert ll.size() == 3;
+
+        // valores iguais ao parâmetro também são removidos (só sobra o que é
+        // estritamente maior)
+        ll = new LinkedList();
+        ll.addLast(4);
+        ll.addLast(4);
+        ll.addLast(5);
+
+        ll.filter(4);
+        assert ll.toString().equals("5");
+
+        // nada é maior que o parâmetro: lista fica vazia
+        ll = new LinkedList();
+        ll.addLast(1);
+        ll.addLast(2);
+        ll.addLast(3);
+
+        ll.filter(10);
+        assert ll.isEmpty();
+
+        // tudo já é maior: lista não muda
+        ll = new LinkedList();
+        ll.addLast(5);
+        ll.addLast(6);
+        ll.addLast(7);
+
+        ll.filter(1);
+        assert ll.toString().equals("5, 6, 7");
+
+        ll = new LinkedList();
+        ll.filter(3);
+        assert ll.isEmpty();
+    }
+
     public static void main(String[] args) {
         LinkedListAsserts tests = new LinkedListAsserts();
 
@@ -777,6 +858,8 @@ public class LinkedListAsserts {
         tests.testToArray();
         tests.testMeio();
         tests.testIsPalindromo();
+        tests.testRemoveLastOccurrence();
+        tests.testFilter();
     }
 
 }

@@ -60,3 +60,7 @@ Implemente também os seguintes métodos, já presentes como stubs na classe `Li
 * `int meio()`. Retorna o valor do elemento do meio da lista, usando a técnica dos dois ponteiros (um avança uma posição por vez, o outro avança duas) em uma única passada. Se a lista tiver tamanho par, retorne o segundo dos dois elementos centrais.
 
 * `boolean isPalindromo()`. Retorna `true` se a lista for um palíndromo. Aproveite o fato de a lista ser duplamente encadeada para resolver isso em O(n) tempo e O(1) espaço extra, sem array ou pilha auxiliar.
+
+* `boolean removeLastOccurrence(int valor)`. Remove a última ocorrência de `valor` na lista (diferente de `removeByValue`, que remove a primeira). Retorna `true` se removeu, `false` se não encontrou.
+
+* `void filter(int valor)`. Remove da lista, em efeito colateral (sem criar uma lista nova), todo elemento cujo valor seja menor ou igual a `valor`. Ao final, a lista só deve ter elementos estritamente maiores que `valor`.
